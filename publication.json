@@ -1,0 +1,137 @@
+{
+ "contenu": {
+  "format": 1,
+  "publie_le": "2026-11-20T11:12:39",
+  "version_app": "1.0.0",
+  "lien_telechargement": "https://github.com/pfaye0366/plan-decaissement/releases/latest",
+  "parametres": {
+   "2026": {
+    "_sources": [
+     "Revenu Québec - Maximum des gains admissibles et taux de cotisation au RRQ (2026) : https://www.revenuquebec.ca/fr/entreprises/retenues-a-la-source-et-cotisations-de-lemployeur/calcul-des-retenues-et-des-cotisations/cotisations-au-rrq/maximum-des-gains-admissibles-et-taux-de-cotisation/",
+     "Revenu Québec - Maximum de revenus assurables et taux de cotisation au RQAP (2026) : https://www.revenuquebec.ca/fr/entreprises/retenues-a-la-source-et-cotisations-de-lemployeur/calcul-des-retenues-et-des-cotisations/cotisations-au-rqap/maximum-de-revenus-assurables-et-taux-de-cotisation/",
+     "EDSC - Taux de cotisation à l'assurance-emploi de 2026 : https://www.canada.ca/fr/emploi-developpement-social/programmes/assurance-emploi/ae-liste/rapports/cotisation/taux2026.html",
+     "Minimums FERR : art. 7308 du Règlement de l'impôt sur le revenu (tableau CQFF).",
+     "Canada.ca - Montant des paiements de la Sécurité de la vieillesse (avril à juin 2026) : https://www.canada.ca/fr/services/prestations/pensionspubliques/rpc/securite-vieillesse/paiements/tab3-8.html",
+     "ARC - Indexation des montants (2023-2026) : https://www.canada.ca/fr/agence-revenu/services/impot/particuliers/foire-questions-particuliers/rajustement-montants-fonction-indexation-impot-particuliers-prestations.html",
+     "Finances Québec - Paramètres du régime d'imposition des particuliers 2026 : https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTFR_RegimeImpot2026.pdf",
+     "Validation croisée : RCGT, Impôt des particuliers Québec 2026 (tableaux P1-P4, mise à jour 30 avril 2026)"
+    ],
+    "plan": {
+     "cotisations": {
+      "rrq_exemption": 3500.0,
+      "rrq_mga": 74600.0,
+      "rrq_taux": 0.063,
+      "rrq_taux_base": 0.053,
+      "rrq_msga": 85000.0,
+      "rrq_taux_2e_palier": 0.04,
+      "ae_taux": 0.013,
+      "ae_maximum": 68900.0,
+      "rqap_taux": 0.0043,
+      "rqap_maximum": 103000.0
+     },
+     "rrq": {
+      "reduction_mensuelle_avant_65": 0.006,
+      "bonification_mensuelle_apres_65": 0.007
+     },
+     "ferr_minimums": {
+      "71": 0.0528,
+      "72": 0.054,
+      "73": 0.0553,
+      "74": 0.0567,
+      "75": 0.0582,
+      "76": 0.0598,
+      "77": 0.0617,
+      "78": 0.0636,
+      "79": 0.0658,
+      "80": 0.0682,
+      "81": 0.0708,
+      "82": 0.0738,
+      "83": 0.0771,
+      "84": 0.0808,
+      "85": 0.0851,
+      "86": 0.0899,
+      "87": 0.0955,
+      "88": 0.1021,
+      "89": 0.1099,
+      "90": 0.1192,
+      "91": 0.1306,
+      "92": 0.1449,
+      "93": 0.1634,
+      "94": 0.1879,
+      "95": 0.2
+     },
+     "psv": {
+      "montant_maximal_mensuel": 743.05,
+      "annees_pleine_pension": 40,
+      "minimum_annees": 10,
+      "bonification_mensuelle_report": 0.006,
+      "majoration_75_ans": 0.1
+     }
+    },
+    "canada": {
+     "federal": {
+      "seuils": [
+       58523,
+       117045,
+       181440,
+       258482
+      ],
+      "taux": [
+       0.14,
+       0.205,
+       0.26,
+       0.29,
+       0.33
+      ],
+      "taux_credits": 0.14,
+      "montant_personnel_max": 16452,
+      "montant_personnel_min": 14829,
+      "age_montant": 9208,
+      "age_seuil": 46432,
+      "age_taux_reduction": 0.15,
+      "pension_montant": 2000,
+      "emploi_montant": 1501,
+      "psv_seuil_remboursement": 95323,
+      "psv_taux_remboursement": 0.15,
+      "abattement_quebec": 0.165,
+      "div_determines_majoration": 0.38,
+      "div_determines_credit": 0.150198,
+      "div_ordinaires_majoration": 0.15,
+      "div_ordinaires_credit": 0.090301,
+      "inclusion_gains_capital": 0.5
+     },
+     "quebec": {
+      "seuils": [
+       54345,
+       108680,
+       132245
+      ],
+      "taux": [
+       0.14,
+       0.19,
+       0.24,
+       0.2575
+      ],
+      "taux_credits": 0.14,
+      "montant_personnel": 18952,
+      "age_montant": 3986,
+      "retraite_montant": 3541,
+      "personne_seule_montant": 2172,
+      "reduction_seuil_familial": 42955,
+      "reduction_taux": 0.1875,
+      "deduction_travailleurs_taux": 0.06,
+      "deduction_travailleurs_max": 1450,
+      "fss_seuil_1": 18500,
+      "fss_seuil_2": 64355,
+      "fss_max_1": 150,
+      "fss_max_total": 1000,
+      "div_determines_credit": 0.117,
+      "div_ordinaires_credit": 0.0342
+     }
+    }
+   }
+  },
+  "utilisateurs": []
+ },
+ "signature": "UQ+ZBHq1K95aOU6u5/YGTjazaIrEhooS7JLy4hnSbkpCUyGhZTR9sn5MZmh8HmMb7A4o0e1bUrLYQ9cFEsd0DQ=="
+}
