@@ -10,4 +10,10 @@ personnes seules, Québec / Canada / France).
 
 Vos simulations restent uniquement sur votre ordinateur : elles ne sont jamais envoyées ailleurs.
 
-Estimation seulement : ce n'est pas un conseil financier, fiscal ou juridique.
+## Avertissement
+
+Cette application produit une **estimation** d'un plan de décaissement à la retraite pour une personne ou un couple résidant au Québec (impôts fédéral, du Québec et, le cas échéant, français). Les résultats dépendent des hypothèses que vous saisissez et de règles qui comportent des simplifications.
+
+Elle ne constitue **pas un conseil financier, fiscal ou juridique**. Ne prenez aucune décision importante sur la seule foi de ces résultats (date de retraite, début des rentes, retraits REER/FERR…) sans en avoir d'abord discuté avec votre planificateur financier.
+
+Voyez plutôt cette simulation comme un **outil de préparation** : elle vous aide à comprendre votre situation, à explorer différents scénarios et à aborder vos rencontres avec votre planificateur de façon plus éclairée, avec les bonnes questions.
