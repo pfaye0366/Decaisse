@@ -106,7 +106,7 @@
 <main>
 <header class="titre">
   <h1>Plan de décaissement — guide de l'abonné</h1>
-  <p>Pour la version 2026-02 de l'application · guide mis à jour le 20/11/2026</p>
+  <p>Pour la version 2026-03 de l'application · guide mis à jour le 21/11/2026</p>
 </header>
 
 <!-- ============================================================ -->
@@ -332,12 +332,42 @@ l'application les indexe ensuite selon l'inflation choisie.</p>
 
 <h3>Optimisation et options de calcul</h3>
 <figure class="moyenne"><img src="images/f-optimisation.png" alt="Section Optimisation et options de calcul"></figure>
+<p>Ces réglages ne changent pas vos revenus : ils disent au programme comment juger un plan, et ce qu'il doit imposer
+  ou calculer. L'optimisation choisit, pour chaque année, combien retirer du REER/FERR afin d'obtenir la
+  <strong>plus grande épargne finale nette d'impôt</strong> (en dollars de 2026), tout en vous assurant le revenu visé.</p>
 <ul>
-  <li><strong>Impôt latent sur le FERR restant</strong> : le FERR qui reste à la fin du plan sera imposé un jour ; ce taux sert à comparer
-    équitablement un FERR restant et un CELI restant.</li>
-  <li><strong>Impôt sur les rendements hors CELI</strong> : un taux simplifié pour les placements non enregistrés.</li>
-  <li><strong>Retraits FERR imposés</strong> : pour forcer un retrait une année donnée (par exemple <code>2033: 20000</code>).</li>
-  <li><strong>Calculer les cotisations RRQ, AE et RQAP sur les salaires</strong> : laissez coché.</li>
+  <li><strong>Impôt latent sur le FERR restant en fin de plan</strong> (30 % par défaut). Le FERR n'a jamais été imposé :
+    un solde de 300 000 $ à la fin du plan ne vaut pas 300 000 $, car il sera imposé un jour (au plus tard au décès du
+    dernier conjoint, où tout le solde s'ajoute au revenu de l'année). L'optimisation compare donc deux choix :
+    <em>retirer maintenant</em> (impôt au taux marginal de l'année, surplus placé dans le CELI, où il ne sera plus jamais
+    imposé) ou <em>laisser dans le FERR</em> (imposé plus tard à ce taux latent).
+    <ul>
+      <li>Plus ce taux est <strong>élevé</strong>, plus le programme vide le FERR tôt, en profitant des années où votre
+        taux marginal est bas : souvent entre la retraite et le début de la RRQ et de la PSV, ou l'année des 65 ans,
+        quand le fractionnement des revenus de retraite devient possible au Québec. Un gros retrait une année donnée,
+        en bonne partie placé dans le CELI, vient généralement de là.</li>
+      <li>Plus il est <strong>bas</strong>, plus l'argent reste dans le FERR.</li>
+      <li>Conseil : essayez 25 %, 30 % et 40 %. Si le plan change peu, votre stratégie est solide ; s'il change beaucoup,
+        parlez-en avec votre planificateur (le taux réel dépend de votre succession et de l'ordre des décès).</li>
+    </ul></li>
+  <li><strong>Impôt sur les rendements hors CELI</strong> (30 % par défaut). Quand vos revenus dépassent vos besoins et
+    que vos droits CELI sont épuisés, le surplus va dans un compte non enregistré (colonne « Placé non enr. »). Ses
+    rendements sont imposés chaque année à ce taux simplifié : à 5 % de rendement, il croît d'environ 3,5 % par an.
+    Ce réglage change peu les décisions ; une valeur plus basse (20 à 25 %) se défend si ces placements rapportent
+    surtout des gains en capital ou des dividendes canadiens.</li>
+  <li><strong>Retraits FERR imposés</strong> (par exemple <code>2031: 40000; 2032: 35000</code>). Vous remplacez le choix
+    du programme pour les années indiquées ; les autres années restent optimisées en tenant compte des vôtres.
+    <ul>
+      <li>Les montants sont en <strong>dollars de l'année</strong> (pas en dollars de 2026).</li>
+      <li>Le minimum obligatoire du FERR et le solde disponible restent respectés.</li>
+      <li>Utile pour <strong>étaler</strong> un gros retrait proposé une seule année : l'impôt est plus régulier et vous
+        évitez des acomptes provisionnels, souvent pour un coût faible sur l'épargne finale. Comparez les deux
+        résultats pour le mesurer.</li>
+      <li>Vous pouvez aussi modifier directement la cellule « Retrait REER/FERR » du tableau annuel.</li>
+    </ul></li>
+  <li><strong>Calculer les cotisations RRQ, AE et RQAP sur les salaires</strong> : laissez coché. Les retenues réelles
+    sur la paie sont déduites des salaires, avec leur effet sur l'impôt (crédit ou déduction). Cela ne joue que les
+    années où il y a un salaire.</li>
 </ul>
 
 <!-- ============================================================ -->
@@ -560,7 +590,7 @@ pas de statistiques d'utilisation, pas de publicité.</p>
 </dl>
 
 <footer>
-  <p>Plan de décaissement — version 2026-02 · guide mis à jour le 20/11/2026.</p>
+  <p>Plan de décaissement — version 2026-03 · guide mis à jour le 21/11/2026.</p>
   <p>Estimation seulement : à discuter avec votre planificateur financier avant toute décision.</p>
 </footer>
 </main>
