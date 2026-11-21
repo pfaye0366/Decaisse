@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide de l'abonné</title>
+<style>
+  :root {
+    --fond: #f6f7f9; --surface: #ffffff; --texte: #1f2430; --doux: #5b6576; --bordure: #dde1e7;
+    --accent: #1f5fae; --accent-doux: #e8f0fb; --note: #fff7e0; --note-bord: #e0b33c;
+    --alerte: #fdecec; --alerte-bord: #d64545; --vert: #16a34a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fond: #14181f; --surface: #1c222b; --texte: #e6e9ee; --doux: #9aa4b5; --bordure: #2e3642;
+      --accent: #6aa5f0; --accent-doux: #1d2c42; --note: #2e2816; --note-bord: #b48a22;
+      --alerte: #3a1f22; --alerte-bord: #d95c5c;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
+  body { margin: 0; background: var(--fond); color: var(--texte); font: 17px/1.6 "Segoe UI", system-ui, sans-serif; }
+  .mise-en-page { display: grid; grid-template-columns: 290px minmax(0, 1fr); max-width: 1320px; margin: 0 auto; }
+  nav.sommaire { position: sticky; top: 0; height: 100vh; overflow-y: auto; padding: 1.5rem 1rem 2rem 1.5rem;
+    border-right: 1px solid var(--bordure); font-size: .92rem; }
+  nav.sommaire h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--doux); margin: 0 0 .6rem; }
+  nav.sommaire ol { margin: 0; padding-left: 1.3rem; }
+  nav.sommaire li { margin: .25rem 0; }
+  nav.sommaire a { color: var(--texte); text-decoration: none; }
+  nav.sommaire a:hover { color: var(--accent); text-decoration: underline; }
+  main { padding: 2rem 3rem 4rem; min-width: 0; }
+  header.titre { border-bottom: 1px solid var(--bordure); padding-bottom: 1.2rem; margin-bottom: 1.5rem; }
+  header.titre h1 { margin: 0 0 .3rem; font-size: 2rem; line-height: 1.2; }
+  header.titre p { margin: .2rem 0; color: var(--doux); }
+  h2 { font-size: 1.5rem; margin: 2.8rem 0 .8rem; padding-top: .4rem; border-top: 1px solid var(--bordure); }
+  h3 { font-size: 1.15rem; margin: 1.8rem 0 .5rem; }
+  p, li { max-width: 78ch; }
+  a { color: var(--accent); }
+  code, kbd { font-family: Consolas, monospace; font-size: .9em; background: var(--accent-doux); padding: .05rem .35rem; border-radius: 4px; }
+  figure { margin: 1.2rem 0 1.6rem; }
+  figure img { display: block; max-width: 100%; height: auto; border: 1px solid var(--bordure); border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06); background: #fff; }
+  figure.etroite img { max-width: 520px; }
+  figure.moyenne img { max-width: 760px; }
+  figcaption { color: var(--doux); font-size: .9rem; margin-top: .45rem; max-width: 78ch; }
+  .capture-a-venir { border: 2px dashed var(--bordure); border-radius: 8px; padding: 1.4rem; color: var(--doux);
+    text-align: center; max-width: 620px; }
+  .encadre { border-left: 4px solid var(--accent); background: var(--accent-doux); padding: .8rem 1.1rem; border-radius: 6px; margin: 1.2rem 0; max-width: 82ch; }
+  .encadre.note { border-color: var(--note-bord); background: var(--note); }
+  .encadre.important { border-color: var(--alerte-bord); background: var(--alerte); }
+  .encadre p { margin: .4rem 0; }
+  .encadre > :first-child { margin-top: 0; } .encadre > :last-child { margin-bottom: 0; }
+  ol.etapes > li { margin: .5rem 0; }
+  table { border-collapse: collapse; margin: 1rem 0; font-size: .95rem; max-width: 100%; }
+  th, td { border-bottom: 1px solid var(--bordure); padding: .45rem .7rem; text-align: left; vertical-align: top; }
+  th { color: var(--doux); font-weight: 600; }
+  .tableau { overflow-x: auto; }
+  dl.glossaire dt { font-weight: 700; margin-top: .8rem; }
+  dl.glossaire dd { margin: .1rem 0 0 1.2rem; max-width: 76ch; }
+  .reperes { columns: 2; max-width: 80ch; }
+  .reperes li { break-inside: avoid; }
+  .pastille { display: inline-flex; align-items: center; justify-content: center; width: 1.5rem; height: 1.5rem;
+    border-radius: 50%; background: #c2185b; color: #fff; font-weight: 700; font-size: .85rem; margin-right: .3rem; }
+  .badge-abonnes { background: var(--vert); color: #fff; border-radius: 999px; padding: .05rem .5rem; font-size: .8rem; font-weight: 700; }
+  footer { margin-top: 3rem; color: var(--doux); font-size: .9rem; border-top: 1px solid var(--bordure); padding-top: 1rem; }
+  @media (max-width: 900px) {
+    .mise-en-page { grid-template-columns: 1fr; }
+    nav.sommaire { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--bordure); }
+    main { padding: 1.2rem 16px 3rem; }
+    .reperes { columns: 1; }
+  }
+  @media print {
+    body { background: #fff; font-size: 11pt; }
+    nav.sommaire { display: none; }
+    .mise-en-page { display: block; }
+    main { padding: 0; }
+    h2 { break-before: page; }
+    figure { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="mise-en-page">
+<nav class="sommaire" aria-label="Sommaire">
+  <h2>Sommaire</h2>
+  <ol>
+    <li><a href="#presentation">Présentation</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#activation">Premier lancement</a></li>
+    <li><a href="#ecran">L'écran en un coup d'œil</a></li>
+    <li><a href="#saisie">Saisir votre situation</a></li>
+    <li><a href="#resultats">Lire les résultats</a></li>
+    <li><a href="#comparer">Comparer des scénarios</a></li>
+    <li><a href="#enregistrer">Enregistrer, exporter, sauvegarder</a></li>
+    <li><a href="#parametres">Paramètres officiels</a></li>
+    <li><a href="#mises-a-jour">Mises à jour</a></li>
+    <li><a href="#france">Si vous avez des revenus de France</a></li>
+    <li><a href="#confidentialite">Confidentialité</a></li>
+    <li><a href="#depannage">Dépannage</a></li>
+    <li><a href="#limites">Limites du modèle</a></li>
+    <li><a href="#sources">Sources et références</a></li>
+    <li><a href="#glossaire">Glossaire</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="titre">
+  <h1>Plan de décaissement — guide de l'abonné</h1>
+  <p>Pour la version 2026-02 de l'application · guide mis à jour le 20/11/2026</p>
+</header>
+
+<!-- ============================================================ -->
+<h2 id="presentation">1. Présentation</h2>
+
+<p>Le <strong>Plan de décaissement</strong> projette, année par année, les revenus de votre retraite :
+rentes d'employeur, Régime de rentes du Québec (RRQ), Sécurité de la vieillesse (PSV), retraits de vos REER/FERR et CELI,
+et les <strong>impôts fédéral et du Québec</strong> qui en découlent.</p>
+
+<p>Son point fort : il <strong>cherche le meilleur rythme de retrait de vos REER/FERR</strong> sur toute la période,
+pour payer le moins d'impôt possible tout en vous assurant le revenu visé. Il permet aussi de comparer
+plusieurs choix : date de départ, âge de début de la RRQ ou de la PSV.</p>
+
+<h3>Avertissement</h3>
+<div class="encadre important">
+<p>Cette application produit une <strong>estimation</strong> d&#x27;un plan de décaissement à la retraite pour une personne ou un couple résidant au Québec (impôts fédéral, du Québec et, le cas échéant, français). Les résultats dépendent des hypothèses que vous saisissez et de règles qui comportent des simplifications.</p>
+<p>Elle ne constitue <strong>pas un conseil financier, fiscal ou juridique</strong>. Ne prenez aucune décision importante sur la seule foi de ces résultats (date de retraite, début des rentes, retraits REER/FERR…) sans en avoir d&#x27;abord discuté avec votre planificateur financier.</p>
+<p>Voyez plutôt cette simulation comme un <strong>outil de préparation</strong> : elle vous aide à comprendre votre situation, à explorer différents scénarios et à aborder vos rencontres avec votre planificateur de façon plus éclairée, avec les bonnes questions.</p>
+</div>
+
+<h3>Ce qu'il vous faut</h3>
+<ul>
+  <li>Un ordinateur sous <strong>Windows 10 ou 11</strong>, avec environ 150 Mo d'espace libre.</li>
+  <li>Une <strong>connexion Internet au premier lancement</strong> (ensuite, elle sert seulement à recevoir les mises à jour).</li>
+  <li>Votre <strong>invitation</strong> : elle contient votre courriel et votre code d'activation.</li>
+  <li>Vos documents de retraite à portée de main (voir la liste à la section <a href="#saisie">Saisir votre situation</a>).</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="installation">2. Installation</h2>
+
+<ol class="etapes">
+  <li><strong>Téléchargez</strong> l'application à l'adresse indiquée dans votre invitation
+    (<a href="https://github.com/pfaye0366/plan-decaissement/releases/latest">https://github.com/pfaye0366/plan-decaissement/releases/latest</a>).
+    Sur cette page, sous « Assets », cliquez sur le fichier <code>PlanDec-….zip</code>.</li>
+  <li><strong>Extrayez</strong> le fichier : dans le dossier Téléchargements, faites un clic droit sur le fichier .zip,
+    puis <em>Extraire tout…</em>. Choisissez par exemple votre dossier Documents, puis <em>Extraire</em>.
+    <figure class="moyenne"><img src="images/windows-extraire.png" alt="Menu Extraire tout de Windows"><figcaption>Clic droit sur le fichier .zip, puis « Extraire tout… ».</figcaption></figure>
+    <div class="encadre note"><p>Ne lancez pas le programme depuis l'intérieur du fichier .zip sans l'avoir extrait : il ne fonctionnerait pas.</p></div>
+  </li>
+  <li>Ouvrez le dossier <strong>PlanDec</strong> obtenu et double-cliquez sur
+    <strong>Plan de decaissement.exe</strong>. Astuce : faites un clic droit sur ce fichier puis <em>Envoyer vers &gt; Bureau (créer un raccourci)</em>
+    pour le retrouver facilement.</li>
+  <li>Au premier lancement, Windows peut afficher <strong>« Windows a protégé votre ordinateur »</strong>.
+    Cliquez sur <em>Informations complémentaires</em>, puis sur <em>Exécuter quand même</em>.
+    <figure class="moyenne"><img src="images/windows-smartscreen.png" alt="Fenêtre Windows a protégé votre ordinateur"><figcaption>Message de Windows SmartScreen : « Informations complémentaires », puis « Exécuter quand même ».</figcaption></figure>
+    <p>Ce message apparaît parce que le programme n'est pas signé par un éditeur commercial (une signature coûte plusieurs centaines de dollars par an).
+    Il ne fait que des calculs sur votre ordinateur.</p>
+    <div class="encadre note" id="smart-app-control">
+      <p><strong>Si Windows bloque le programme sans proposer « Exécuter quand même »</strong> (message de <em>Smart App Control</em>,
+      présent sur les ordinateurs récents sous Windows 11), la protection doit être suspendue le temps du premier lancement :</p>
+      <ol>
+        <li>Ouvrez <em>Sécurité Windows</em> (menu Démarrer), puis <em>Contrôle des applications et du navigateur</em> &gt;
+          <em>Paramètres de Smart App Control</em>, et choisissez <strong>Désactivé</strong>.</li>
+        <li>Double-cliquez sur <strong>Plan de decaissement.exe</strong>, puis <em>Exécuter quand même</em> ; attendez que l'application s'ouvre dans le navigateur.</li>
+        <li>Revenez dans <em>Paramètres de Smart App Control</em> et <strong>réactivez-le</strong> (<em>Activé</em>).</li>
+      </ol>
+      <p>Le programme démarre ensuite normalement, même avec la protection réactivée. Ne laissez pas Smart App Control désactivé.
+      Il faudra refaire ces étapes une fois à chaque nouvelle version.</p>
+    </div>
+  </li>
+  <li>Une <strong>fenêtre noire</strong> s'ouvre, puis votre navigateur affiche l'application.
+    <figure class="moyenne"><img src="images/fenetre-noire.png" alt="Fenêtre noire du programme"><figcaption>La fenêtre noire fait fonctionner l'application : laissez-la ouverte pendant l'utilisation.</figcaption></figure>
+    <div class="encadre"><p><strong>Laissez la fenêtre noire ouverte</strong> (vous pouvez la réduire) : la fermer arrête l'application.
+    Pour quitter, fermez l'onglet du navigateur puis la fenêtre noire.</p></div>
+  </li>
+</ol>
+
+<p>L'application s'affiche dans votre navigateur habituel, à l'adresse <code>http://127.0.0.1:8770</code>.
+Cette adresse désigne <em>votre propre ordinateur</em> : rien ne passe par un site Web.</p>
+
+<!-- ============================================================ -->
+<h2 id="activation">3. Premier lancement : activation</h2>
+
+<p>Au premier lancement, l'application demande votre <strong>courriel</strong> et votre <strong>code d'activation</strong>,
+tels qu'ils figurent dans votre invitation (le code a la forme <code>ABCD-2345</code> ; majuscules et espaces sans importance).</p>
+
+<figure class="etroite"><img src="images/activation.png" alt="Fenêtre d'activation"><figcaption>Saisissez votre courriel et votre code, lisez l'avertissement, cochez « J'ai lu et compris », puis « Activer ».</figcaption></figure>
+
+<ol class="etapes">
+  <li>Saisissez le courriel et le code.</li>
+  <li>Lisez l'avertissement, puis cochez <em>J'ai lu et compris cet avertissement</em>.</li>
+  <li>Cliquez sur <strong>Activer</strong>. L'application vérifie votre accès et télécharge les paramètres officiels (barèmes d'impôt, RRQ, PSV…).</li>
+</ol>
+
+<p>L'activation ne se fait qu'une fois. Votre code n'est pas conservé : l'application garde seulement une empreinte chiffrée
+qui permet de vérifier votre accès lors des mises à jour.</p>
+
+<p>Vous arrivez ensuite sur une <strong>fiche vierge</strong>. Le message rouge « À compléter » indique la prochaine information
+manquante ; il disparaît quand la fiche est complète.</p>
+
+<figure><img src="images/fiche-vierge.png" alt="Fiche vierge au premier lancement"><figcaption>Fiche vierge : le formulaire à gauche, les résultats à droite.</figcaption></figure>
+
+<!-- ============================================================ -->
+<h2 id="ecran">4. L'écran en un coup d'œil</h2>
+
+<p>Les exemples de ce guide utilisent un couple fictif, <strong>Sylvie et Martin</strong>. Sylvie, née en 1965, prendra sa retraite en
+juin 2027 avec une rente de son employeur. Martin, né en 1962, est déjà retraité.</p>
+
+<figure><img src="images/ecran-principal.png" alt="Écran principal avec repères numérotés"><figcaption>L'écran principal après un calcul.</figcaption></figure>
+
+<ol class="reperes">
+  <li><span class="badge-abonnes">ABONNÉS</span> et le numéro de version de l'application.</li>
+  <li><strong>Mes scénarios</strong> : ouvre une simulation enregistrée.</li>
+  <li><strong>Enregistrer</strong> la simulation affichée.</li>
+  <li><strong>Exporter CSV</strong> : le tableau annuel, pour Excel.</li>
+  <li><strong>Mes fichiers</strong> : ouvre le dossier de vos simulations.</li>
+  <li><strong>Aide</strong> : ouvre ce guide.</li>
+  <li><strong>Masquer les paramètres</strong> : agrandit les résultats.</li>
+  <li><strong>Calculer</strong> : relance le calcul et l'optimisation.</li>
+  <li>Le <strong>formulaire</strong> : votre situation, section par section.</li>
+  <li>Les <strong>onglets</strong> : plan année par année, comparaison de scénarios, paramètres officiels.</li>
+  <li>Les <strong>chiffres clés</strong> du plan.</li>
+</ol>
+
+<p>Le calcul se relance aussi automatiquement quelques instants après une modification du formulaire.
+Le <strong>premier calcul</strong> après l'ouverture prend environ 30 à 60 secondes (chargement du moteur fiscal) ;
+les suivants, quelques secondes.</p>
+
+<p>Le sélecteur <strong>Thème</strong> choisit un affichage clair ou sombre. La barre verticale entre le formulaire et les résultats
+peut être glissée pour élargir le formulaire (double-clic : largeur initiale).</p>
+
+<!-- ============================================================ -->
+<h2 id="saisie">5. Saisir votre situation</h2>
+
+<p>Les sections du formulaire s'ouvrent et se ferment d'un clic sur leur titre. Pour un couple, chaque section a
+<strong>une colonne par personne</strong>. Tous les montants récurrents sont en <strong>dollars d'aujourd'hui (2026)</strong> :
+l'application les indexe ensuite selon l'inflation choisie.</p>
+
+<div class="encadre"><p><strong>Documents utiles</strong></p>
+<ul>
+  <li>Le <strong>relevé de participation de la RRQ</strong> ou une simulation <em>SimulRetraite</em> (Mon dossier, Retraite Québec).</li>
+  <li>L'<strong>estimation de la PSV</strong> (Mon dossier Service Canada) et vos années de résidence au Canada.</li>
+  <li>Les relevés de vos <strong>REER, CELI et comptes de placement</strong> au 31 décembre.</li>
+  <li>Vos <strong>droits de cotisation CELI inutilisés</strong> (Mon dossier de l'ARC).</li>
+  <li>Le relevé ou l'estimation de votre <strong>régime de retraite d'employeur</strong> (rente mensuelle, rente temporaire, indexation).</li>
+</ul></div>
+
+<h3>Horizon et objectif de revenu</h3>
+<figure class="moyenne"><img src="images/f-horizon.png" alt="Section Horizon et objectif de revenu"></figure>
+<ul>
+  <li><strong>Première et dernière année du plan</strong> : la période projetée (par exemple jusqu'à vos 90 ou 95 ans).</li>
+  <li><strong>Revenu net actuel</strong> : ce que vous (le couple) recevez aujourd'hui après impôts, en un an. C'est la référence du niveau de vie visé.</li>
+  <li><strong>Cible</strong> : le pourcentage de ce revenu visé à la retraite (souvent 70 à 85 %). La <strong>fourchette basse et haute</strong>
+    laisse de la souplesse à l'optimisation : le revenu de chaque année reste entre les deux.</li>
+</ul>
+
+<h3>Personnes</h3>
+<figure class="moyenne"><img src="images/f-personnes.png" alt="Section Personnes"></figure>
+<ul>
+  <li><strong>Nombre de personnes</strong> : une personne seule ou un couple. Pour une personne seule, tout ce qui concerne le conjoint disparaît.</li>
+  <li><strong>Prénom</strong> et <strong>naissance</strong> : le mois et l'année seulement (le jour n'est jamais demandé).</li>
+</ul>
+
+<h3>Départ à la retraite et rente d'employeur</h3>
+<figure class="moyenne"><img src="images/f-depart.png" alt="Section Départ à la retraite et rente d'employeur"></figure>
+<ul>
+  <li><strong>Option de départ retenue</strong> : une option décrit un scénario de départ (date, rente). Le bouton <em>+ Option</em> en ajoute une
+    (par exemple « juin 2027 » et « janvier 2029 »), que vous pourrez comparer. Choisissez <em>Déjà retraité(e)</em> si la personne ne travaille plus.</li>
+  <li><strong>Date de retraite</strong> : le premier mois sans salaire.</li>
+  <li><strong>Salaire versé l'année du départ</strong> : laissez vide pour un calcul au prorata des mois travaillés.</li>
+  <li><strong>Mois cotisés à la RRQ jusqu'au départ</strong> : laissez vide, l'application les calcule.</li>
+  <li><strong>Rente d'un régime de retraite d'employeur</strong> : cochez <em>Oui</em> si vous en avez une, puis indiquez le <strong>début</strong>,
+    l'éventuelle <strong>rente temporaire</strong> (prestation de raccordement versée jusqu'à 65 ans, par exemple), la <strong>rente normale</strong>
+    mensuelle et son <strong>indexation</strong> (taux, année de début, durée).</li>
+</ul>
+
+<h3>Salaire et revenu d'entreprise</h3>
+<figure class="moyenne"><img src="images/f-salaire.png" alt="Section Salaire et revenu d'entreprise"></figure>
+<ul>
+  <li><strong>Salaire brut annuel</strong> jusqu'au départ.</li>
+  <li><strong>Bénéfice net d'entreprise</strong> (travail autonome, par exemple) et l'année où il commence ; laissez 0 si vous n'en avez pas.</li>
+</ul>
+
+<h3>REER / FERR et CELI</h3>
+<figure class="moyenne"><img src="images/f-reer.png" alt="Section REER / FERR et CELI"></figure>
+<ul>
+  <li><strong>REER au 31 décembre</strong> de l'année précédant le plan, et la <strong>cotisation annuelle</strong> jusqu'au départ.</li>
+  <li><strong>Conversion en FERR</strong> : l'année de conversion ; vide = l'année de vos 65 ans (la loi l'impose au plus tard à 71 ans).
+    Après la conversion, le retrait minimum légal est appliqué chaque année.</li>
+  <li><strong>Retraits REER permis avant la conversion</strong> : cochez pour laisser l'optimiseur retirer du REER avant le FERR.</li>
+  <li><strong>CELI au 31 décembre</strong>.</li>
+</ul>
+
+<h3>RRQ (Régime de rentes du Québec)</h3>
+<figure class="moyenne"><img src="images/f-rrq.png" alt="Section RRQ"></figure>
+<ul>
+  <li><strong>Selon le relevé</strong> (si la rente n'est pas encore versée) : indiquez la rente estimée à 65 ans <em>si vous arrêtez de cotiser</em>
+    et <em>si vous cotisez jusqu'à 65 ans</em>, la date du relevé et l'<strong>âge de début</strong> (60 à 72 ans).
+    L'application estime la rente selon votre date de départ, puis applique la réduction avant 65 ans (−0,6 % par mois)
+    ou la bonification après 65 ans (+0,7 % par mois).</li>
+  <li><strong>Montant fixe ou déjà versée</strong> : la rente mensuelle actuelle et, si elle n'a pas commencé, son mois de début.</li>
+</ul>
+
+<h3>PSV (Sécurité de la vieillesse)</h3>
+<figure class="moyenne"><img src="images/f-psv.png" alt="Section PSV"></figure>
+<ul>
+  <li><strong>Selon la résidence au Canada</strong> : le mois d'arrivée au Canada (si vous y êtes né, indiquez votre <strong>mois de naissance</strong>)
+    et les années de résidence antérieures après 18 ans. La pleine pension demande 40 ans de résidence après 18 ans ; sinon,
+    elle est proportionnelle. Cochez <em>Accord de sécurité sociale</em> si un accord avec un autre pays vous aide à atteindre les 10 ans minimum.</li>
+  <li><strong>Âge de début</strong> : de 65 à 70 ans ; chaque mois de report augmente la pension de 0,6 %.</li>
+  <li><strong>Grille selon l'âge</strong> : saisissez vous-même le montant mensuel prévu pour chaque âge de début (tiré de votre estimation Service Canada).</li>
+  <li><strong>Montant fixe ou déjà versée</strong> : la pension actuelle.</li>
+  <li><strong>Majoration de 10 % à partir de 75 ans</strong> : prévue par la loi ; laissez cochée.</li>
+</ul>
+<p>La récupération de la PSV (pour les revenus élevés) est calculée automatiquement.</p>
+
+<h3>CELI et surplus</h3>
+<figure class="moyenne"><img src="images/f-celi.png" alt="Section CELI et surplus"></figure>
+<ul>
+  <li><strong>Placer les surplus au CELI</strong> : les années où vos revenus dépassent la cible, le surplus est placé au CELI
+    (dans la limite des droits), puis dans un compte non enregistré.</li>
+  <li><strong>Droits CELI inutilisés</strong> au 1<sup>er</sup> janvier de la première année, et les <strong>nouveaux droits</strong> annuels par personne.</li>
+  <li><strong>Personnes cotisant au CELI</strong> : 1 ou 2.</li>
+</ul>
+
+<h3>Hypothèses économiques</h3>
+<figure class="moyenne"><img src="images/f-economie.png" alt="Section Hypothèses économiques"></figure>
+<ul>
+  <li><strong>Rendement</strong> annuel moyen de vos placements, <em>après frais</em>. Restez prudent : un écart d'un point change beaucoup le résultat sur 30 ans.</li>
+  <li><strong>Inflation</strong> : sert à indexer les rentes, les seuils fiscaux et votre revenu cible (2 % est la cible de la Banque du Canada).</li>
+</ul>
+
+<h3>Optimisation et options de calcul</h3>
+<figure class="moyenne"><img src="images/f-optimisation.png" alt="Section Optimisation et options de calcul"></figure>
+<ul>
+  <li><strong>Impôt latent sur le FERR restant</strong> : le FERR qui reste à la fin du plan sera imposé un jour ; ce taux sert à comparer
+    équitablement un FERR restant et un CELI restant.</li>
+  <li><strong>Impôt sur les rendements hors CELI</strong> : un taux simplifié pour les placements non enregistrés.</li>
+  <li><strong>Retraits FERR imposés</strong> : pour forcer un retrait une année donnée (par exemple <code>2033: 20000</code>).</li>
+  <li><strong>Calculer les cotisations RRQ, AE et RQAP sur les salaires</strong> : laissez coché.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="resultats">6. Lire les résultats</h2>
+
+<h3>Les chiffres clés</h3>
+<figure><img src="images/r-tuiles.png" alt="Chiffres clés"></figure>
+<ul>
+  <li><strong>Impôts payés</strong> sur toute la période (en dollars courants, et ramenés en dollars de 2026).</li>
+  <li><strong>Épargne restante</strong> à la fin du plan : CELI, compte non enregistré et FERR.</li>
+  <li><strong>Revenu disponible</strong> moyen, en pourcentage de votre revenu actuel.</li>
+  <li>L'année où le <strong>FERR</strong> et le <strong>CELI</strong> seraient épuisés.</li>
+</ul>
+
+<h3>À savoir, hypothèses et méthode</h3>
+<p>L'encadré <strong>À savoir</strong> signale les points d'attention du calcul. La section <strong>Hypothèses et méthode</strong>
+résume en toutes lettres ce que l'application a compris de votre saisie : vérifiez-la, c'est le meilleur moyen de repérer une erreur de saisie.</p>
+<figure><img src="images/r-hypotheses.png" alt="Hypothèses et méthode"></figure>
+
+<h3>Graphiques</h3>
+<p><strong>Répartition des ressources chaque année</strong> : d'où vient votre revenu (rentes, retraits REER/FERR, CELI…). Survolez une barre pour le détail ;
+le sélecteur affiche les montants en dollars de l'année ou en dollars de 2026.</p>
+<figure><img src="images/r-repartition.png" alt="Graphique de répartition des ressources"></figure>
+<p><strong>Épargne en fin d'année</strong> : l'évolution de vos REER/FERR, CELI et compte non enregistré.</p>
+<figure><img src="images/r-epargne.png" alt="Graphique de l'épargne en fin d'année"></figure>
+
+<h3>Tableau annuel</h3>
+<figure><img src="images/r-tableau.png" alt="Tableau annuel"></figure>
+<p>Une ligne par année, en dollars de l'année. Les cases <em>Détail des revenus</em> et <em>Détail des impôts</em> ajoutent des colonnes.</p>
+<p><strong>Vous pouvez modifier certaines cellules</strong> (salaire, retraits REER/FERR et CELI, placements, soldes de fin d'année réels),
+puis cliquer sur <strong>Recalculer avec les modifications</strong>. Les cellules modifiées sont encadrées ;
+<em>Réinitialiser toutes les saisies</em> revient au calcul optimisé. Le retrait minimum du FERR reste toujours appliqué.</p>
+<p>Le bouton <strong>Détail</strong> d'une ligne ouvre la <strong>fiche de l'année</strong> : revenus, impôts, fractionnement, retraits, soldes et explications.</p>
+<figure class="moyenne"><img src="images/r-detail.png" alt="Fiche annuelle détaillée"><figcaption>La fiche de l'année 2030.</figcaption></figure>
+
+<h3>Raisonnement du décaissement</h3>
+<p>Pour chaque année, l'application explique d'où vient chaque revenu et <strong>pourquoi</strong> elle propose ces retraits et placements.</p>
+<figure><img src="images/r-raisonnement.png" alt="Raisonnement du décaissement"></figure>
+
+<p>Sous les résultats, une mention rappelle que le plan est une estimation :</p>
+<figure class="moyenne"><img src="images/r-mention.png" alt="Mention sous les résultats"></figure>
+
+<!-- ============================================================ -->
+<h2 id="comparer">7. Comparer des scénarios</h2>
+
+<p>L'onglet <strong>Comparer des scénarios</strong> calcule plusieurs variantes de votre situation et les classe.
+Pour chaque personne, cochez les <strong>options de départ</strong> et les <strong>âges de début de la RRQ et de la PSV</strong> à comparer.
+Le nombre de variantes s'affiche à côté du bouton ; chacune prend de 5 à 20 secondes.</p>
+<figure class="moyenne"><img src="images/comparer-choix.png" alt="Choix des variantes à comparer"><figcaption>Ici : deux dates de départ pour Sylvie × RRQ à 65 ou 70 ans = 4 variantes.</figcaption></figure>
+<p>Cliquez sur <strong>Lancer la comparaison</strong>. Chaque variante est optimisée séparément, puis le tableau les compare :</p>
+<ul>
+  <li><strong>Impôts cumulés</strong> sur toute la période, en dollars de 2026 ;</li>
+  <li><strong>Épargne finale nette</strong> : ce qui reste à la fin du plan, après l'impôt latent sur le FERR, en dollars de 2026.</li>
+</ul>
+<p>À revenu égal chaque année, la variante qui laisse <strong>la plus grande épargne finale nette</strong> est la plus avantageuse ; elle est marquée « meilleure épargne ».
+Sous le tableau, une carte par variante détaille les sources de revenu (pour une année choisie ou en moyenne).</p>
+<figure><img src="images/comparer-resultats.png" alt="Résultats de la comparaison"></figure>
+
+<!-- ============================================================ -->
+<h2 id="enregistrer">8. Enregistrer, exporter, sauvegarder</h2>
+
+<ul>
+  <li><strong>Enregistrer</strong> : donnez un nom à la simulation. Pour garder plusieurs versions, enregistrez sous des noms différents
+    (par exemple « Sylvie et Martin - variante »). Le menu <strong>Mes scénarios</strong> les rouvre.</li>
+  <li>Au démarrage, l'application rouvre votre dernière simulation.</li>
+  <li><strong>Exporter CSV</strong> : télécharge le tableau annuel, à ouvrir dans Excel ou LibreOffice.</li>
+</ul>
+<figure><img src="images/barre-enregistree.png" alt="Barre du haut après l'enregistrement"></figure>
+
+<h3>Où sont vos données ?</h3>
+<p>Uniquement sur votre ordinateur, dans le dossier <code>C:\Users\<em>votre nom</em>\Documents\Plan de décaissement</code>.
+Le bouton <strong>Mes fichiers</strong>, en haut de l'écran, l'ouvre directement dans l'Explorateur. Il contient :</p>
+<ul>
+  <li><code>scenarios\</code> : vos simulations (un fichier <code>.json</code> par simulation) ;</li>
+  <li><code>parametres\</code> et <code>publication.json</code> : les derniers paramètres officiels reçus ;</li>
+  <li><code>activation.json</code> et <code>preferences.json</code> : l'activation et vos préférences.</li>
+</ul>
+<div class="encadre"><p><strong>Si votre dossier Documents est dans OneDrive</strong> : sur beaucoup d'ordinateurs récents,
+« Documents » dans l'Explorateur désigne en réalité un dossier OneDrive, copié dans le nuage. L'application, elle, enregistre
+volontairement vos simulations dans le dossier Documents <em>local</em> de votre ordinateur, qui n'est <strong>pas</strong>
+synchronisé : vos données financières ne quittent jamais votre ordinateur. C'est pourquoi vous ne les verrez peut-être pas
+en cliquant sur « Documents » : utilisez le bouton <strong>Mes fichiers</strong>.</p></div>
+<div class="encadre note"><p><strong>Sauvegarde</strong> : copiez de temps en temps le dossier <code>Documents\Plan de décaissement\scenarios</code> sur une clé USB
+ou dans votre sauvegarde habituelle. Pour transférer vos simulations sur un autre ordinateur, copiez ce dossier au même endroit.</p></div>
+
+<!-- ============================================================ -->
+<h2 id="parametres">9. Paramètres officiels</h2>
+<p>L'onglet <strong>Paramètres officiels</strong> affiche, pour chaque année, les valeurs utilisées : barèmes d'impôt fédéral et du Québec,
+cotisations, rentes maximales, PSV, retraits minimums du FERR… avec leurs sources. Ils sont en lecture seule et se mettent à jour automatiquement.
+L'onglet indique la date de réception des paramètres.</p>
+<figure><img src="images/parametres-officiels.png" alt="Onglet Paramètres officiels"></figure>
+<p>Pour les années dont les barèmes ne sont pas encore publiés, l'application utilise ceux de la dernière année connue, indexés selon l'inflation retenue.</p>
+
+<!-- ============================================================ -->
+<h2 id="mises-a-jour">10. Mises à jour</h2>
+<h3>Les paramètres officiels</h3>
+<p>À chaque démarrage, l'application télécharge les derniers paramètres officiels publiés et vérifie leur <strong>signature numérique</strong>
+(un fichier modifié par quelqu'un d'autre serait refusé). Vous n'avez rien à faire. Sans connexion, elle utilise les derniers paramètres reçus
+et l'indique dans un bandeau.</p>
+<h3>Une nouvelle version de l'application</h3>
+<p>Quand une nouvelle version est disponible, un bandeau l'annonce en haut de l'écran :</p>
+<figure><img src="images/bandeau-nouvelle-version.png" alt="Bandeau annonçant une nouvelle version"></figure>
+<ol class="etapes">
+  <li>Cliquez sur <strong>télécharger</strong> et récupérez le nouveau fichier .zip.</li>
+  <li>Fermez l'application (onglet du navigateur et fenêtre noire).</li>
+  <li>Supprimez l'ancien dossier <strong>PlanDec</strong>, puis extrayez le nouveau au même endroit (voir <a href="#installation">Installation</a>).</li>
+</ol>
+<p>Vos simulations ne sont pas touchées : elles sont dans votre dossier Documents local (bouton <strong>Mes fichiers</strong>), pas dans le dossier du programme.
+Vous n'aurez pas à refaire l'activation.</p>
+
+<!-- ============================================================ -->
+<h2 id="france">11. Si vous avez des revenus de France</h2>
+<p>Cette section concerne les personnes qui reçoivent (ou recevront) une <strong>pension de retraite française</strong>. Sinon, passez à la suite.</p>
+<p>Dans la section <strong>Pension française</strong> du formulaire, saisissez pour chaque personne les montants mensuels <em>en euros,
+avant impôt</em> : la pension de base (CNAV) et la complémentaire (Agirc-Arrco), ainsi que le mois de début (vide = déjà versée).</p>
+<figure class="moyenne"><img src="images/france-formulaire.png" alt="Section Pension française"></figure>
+<p>Dès qu'un montant est saisi, deux champs apparaissent dans les <strong>Hypothèses économiques</strong> : l'<strong>indexation des pensions françaises</strong>
+et le <strong>taux de change</strong> (combien de dollars pour un euro).</p>
+<figure class="moyenne"><img src="images/france-economie.png" alt="Hypothèses économiques avec les champs France"></figure>
+<p>Selon la convention fiscale entre la France et le Canada, ces pensions sont <strong>imposées en France</strong> (retenue à la source des non-résidents)
+et <strong>exonérées au Canada</strong>, tout en comptant dans le revenu net qui sert à la PSV et à certains crédits. L'impôt français et la cotisation
+d'assurance maladie apparaissent à part dans la fiche annuelle et dans le tableau.</p>
+<figure class="moyenne"><img src="images/france-detail.png" alt="Fiche annuelle avec pension française"></figure>
+<p>Les années passées en France peuvent aussi compter pour la PSV : cochez <em>Accord de sécurité sociale</em> dans la section PSV.</p>
+
+<!-- ============================================================ -->
+<h2 id="confidentialite">12. Confidentialité</h2>
+<ul>
+  <li><strong>Vos données restent sur votre ordinateur.</strong> L'application fonctionne entièrement en local ; l'adresse
+    <code>127.0.0.1</code> n'est accessible que depuis votre ordinateur.</li>
+  <li>La <strong>seule</strong> communication par Internet est le <strong>téléchargement</strong> du fichier des paramètres officiels
+    (<code>https://pfaye0366.github.io/plan-decaissement/publication.json</code>), à chaque démarrage. Comme pour toute page Web, le serveur qui l'héberge (GitHub) voit l'adresse IP de la connexion.</li>
+  <li>Rien n'est envoyé : ni vos simulations, ni votre courriel, ni votre code. L'activation se vérifie sur votre ordinateur, à partir d'une empreinte chiffrée.</li>
+  <li>Le fichier téléchargé est <strong>signé numériquement</strong> : l'application refuse tout fichier qui ne vient pas de l'administrateur.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="depannage">13. Dépannage</h2>
+<div class="tableau"><table>
+  <thead><tr><th>Situation</th><th>Que faire</th></tr></thead>
+  <tbody>
+    <tr><td>« Windows a protégé votre ordinateur »</td><td><em>Informations complémentaires</em>, puis <em>Exécuter quand même</em> (voir <a href="#installation">Installation</a>).</td></tr>
+    <tr><td>« Smart App Control a bloqué… », sans bouton pour continuer</td><td>Suspendez Smart App Control le temps du premier lancement, puis réactivez-le (voir <a href="#smart-app-control">la marche à suivre</a>).</td></tr>
+    <tr><td>Votre antivirus bloque ou met en quarantaine le programme</td><td>Autorisez <code>Plan de decaissement.exe</code> dans votre antivirus, ou demandez de l'aide à la personne qui vous a invité.</td></tr>
+    <tr><td>Le navigateur ne s'ouvre pas</td><td>Ouvrez-le vous-même à l'adresse <code>http://127.0.0.1:8770</code>, tant que la fenêtre noire est ouverte.</td></tr>
+    <tr><td>« Ce site est inaccessible » dans le navigateur</td><td>La fenêtre noire a été fermée : relancez <code>Plan de decaissement.exe</code>.</td></tr>
+    <tr><td>La fenêtre noire se ferme aussitôt ou affiche une erreur</td><td>Le programme est peut-être déjà ouvert : fermez toutes ses fenêtres noires et relancez-le. Sinon, notez le message et transmettez-le.</td></tr>
+    <tr><td>« Courriel ou code d'activation non reconnu »</td><td>Vérifiez le courriel et le code de votre invitation (le code a la forme <code>ABCD-2345</code>).</td></tr>
+    <tr><td>« Impossible de joindre le serveur de publication »</td><td>Vérifiez votre connexion Internet, puis réessayez. La connexion n'est nécessaire qu'à l'activation.</td></tr>
+    <tr><td>« Chemin d'accès trop long » pendant l'extraction</td><td>Extrayez dans un dossier au nom court, par exemple <code>C:\PlanDec</code> ou directement dans <code>Documents</code> (Windows limite la longueur des chemins).</td></tr>
+    <tr><td>Bandeau « Hors connexion »</td><td>Rien à faire : l'application utilise les derniers paramètres reçus.</td></tr>
+    <tr><td>Bandeau « accès aux mises à jour retiré »</td><td>L'application et vos simulations restent utilisables, sans nouvelles mises à jour.</td></tr>
+    <tr><td>Le calcul est long</td><td>Le premier calcul prend 30 à 60 secondes ; une comparaison, de 5 à 20 secondes par variante.</td></tr>
+    <tr><td>Message rouge « À compléter »</td><td>Il indique l'information manquante ou incorrecte ; corrigez-la et le calcul repart.</td></tr>
+  </tbody>
+</table></div>
+
+<!-- ============================================================ -->
+<h2 id="limites">14. Limites du modèle</h2>
+<p>Le modèle simplifie la réalité. Gardez en tête notamment :</p>
+<ul>
+  <li>Le <strong>Supplément de revenu garanti (SRG)</strong> et l'allocation au survivant ne sont pas calculés.</li>
+  <li>Le <strong>décès d'un conjoint</strong> (rente de conjoint survivant, transfert du FERR) n'est pas modélisé.</li>
+  <li>Les <strong>CRI et FRV</strong> (fonds immobilisés, avec un retrait maximum) ne sont pas distingués des REER/FERR.</li>
+  <li>Les placements <strong>non enregistrés</strong> sont imposés à un taux forfaitaire : gains en capital et dividendes ne sont pas distingués.</li>
+  <li>Le <strong>rendement</strong> est constant chaque année : les variations des marchés ne sont pas simulées.</li>
+  <li>Les barèmes des <strong>années futures</strong> sont ceux de la dernière année publiée, indexés selon l'inflation retenue.</li>
+  <li>Les cotisations RRQ sur un revenu d'entreprise ne sont pas calculées.</li>
+  <li>Les droits CELI inutilisés sont ceux que vous saisissez.</li>
+</ul>
+<p>Ces limites sont une raison de plus pour <strong>valider vos décisions avec votre planificateur financier</strong>.</p>
+
+<!-- ============================================================ -->
+<h2 id="sources">15. Sources et références</h2>
+
+<h3>Paramètres officiels</h3>
+<p>Les valeurs de l'onglet <em>Paramètres officiels</em> proviennent des publications suivantes :</p>
+<p><strong>Année 2026</strong></p><ul><li><a href="https://www.revenuquebec.ca/fr/entreprises/retenues-a-la-source-et-cotisations-de-lemployeur/calcul-des-retenues-et-des-cotisations/cotisations-au-rrq/maximum-des-gains-admissibles-et-taux-de-cotisation/">Revenu Québec - Maximum des gains admissibles et taux de cotisation au RRQ (2026)</a></li><li><a href="https://www.revenuquebec.ca/fr/entreprises/retenues-a-la-source-et-cotisations-de-lemployeur/calcul-des-retenues-et-des-cotisations/cotisations-au-rqap/maximum-de-revenus-assurables-et-taux-de-cotisation/">Revenu Québec - Maximum de revenus assurables et taux de cotisation au RQAP (2026)</a></li><li><a href="https://www.canada.ca/fr/emploi-developpement-social/programmes/assurance-emploi/ae-liste/rapports/cotisation/taux2026.html">EDSC - Taux de cotisation à l&#x27;assurance-emploi de 2026</a></li><li>Minimums FERR : art. 7308 du Règlement de l&#x27;impôt sur le revenu (tableau CQFF).</li><li><a href="https://www.canada.ca/fr/services/prestations/pensionspubliques/rpc/securite-vieillesse/paiements/tab3-8.html">Canada.ca - Montant des paiements de la Sécurité de la vieillesse (avril à juin 2026)</a></li><li><a href="https://www.canada.ca/fr/agence-revenu/services/impot/particuliers/foire-questions-particuliers/rajustement-montants-fonction-indexation-impot-particuliers-prestations.html">ARC - Indexation des montants (2023-2026)</a></li><li><a href="https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTFR_RegimeImpot2026.pdf">Finances Québec - Paramètres du régime d&#x27;imposition des particuliers 2026</a></li><li>Validation croisée : RCGT, Impôt des particuliers Québec 2026 (tableaux P1-P4, mise à jour 30 avril 2026)</li></ul>
+
+<h3>Calcul des impôts</h3>
+<ul>
+  <li><strong>Impôts fédéral et du Québec</strong> : moteur de calcul propre à l'application, appliquant les barèmes, crédits (âge, revenus de pension,
+    personne vivant seule, conjoint), fractionnement du revenu de pension, récupération de la PSV et cotisation au Fonds des services de santé (FSS),
+    à partir des sources ci-dessus. Résultats contrôlés contre les tables d'impôt de Raymond Chabot Grant Thornton (écart d'au plus 1 $).</li>
+  <li><strong>Impôt français</strong> : <a href="https://openfisca.org">OpenFisca-France</a>, le modèle de calcul ouvert de la législation française,
+    complété pour les non-résidents (retenue à la source, art. 182 A et 197 A du Code général des impôts ;
+    BOFiP BOI-BAREME-000043 ; pages « non-résidents » d'impots.gouv.fr).</li>
+  <li><strong>Convention fiscale France–Canada</strong> (article 18, pensions), Finances Canada.</li>
+  <li><strong>Retrait minimum des FERR</strong> : article 7308 du Règlement de l'impôt sur le revenu.</li>
+</ul>
+
+<h3>Services en ligne utilisés</h3>
+<ul>
+  <li><strong>GitHub Pages</strong> : hébergement du fichier signé des paramètres officiels (<code>https://pfaye0366.github.io/plan-decaissement/publication.json</code>), lu au démarrage.</li>
+  <li><strong>GitHub Releases</strong> : téléchargement de l'application (<a href="https://github.com/pfaye0366/plan-decaissement/releases/latest">https://github.com/pfaye0366/plan-decaissement/releases/latest</a>).</li>
+</ul>
+<p>L'application n'utilise <strong>aucune autre API ni aucun autre service</strong> : pas de taux de change en ligne (vous le saisissez),
+pas de statistiques d'utilisation, pas de publicité.</p>
+
+<h3>Logiciels libres inclus</h3>
+<p>L'application est construite avec les logiciels suivants, chacun sous sa propre licence :</p>
+<div class="tableau"><table><thead><tr><th>Logiciel</th><th>Version</th><th>Licence</th></tr></thead><tbody><tr><td><a href="https://www.python.org">Python</a></td><td>3.13.9</td><td>Python Software Foundation License</td></tr><tr><td><a href="https://github.com/openfisca/openfisca-core">OpenFisca-Core</a></td><td>44.7.1</td><td>AGPL-3.0</td></tr><tr><td><a href="https://github.com/openfisca/openfisca-france">OpenFisca-France</a></td><td>176.1.2</td><td>AGPL-3.0</td></tr><tr><td><a href="https://numpy.org">NumPy</a></td><td>2.3.5</td><td>BSD-3-Clause</td></tr><tr><td><a href="https://flask.palletsprojects.com">Flask</a></td><td>3.1.3</td><td>BSD-3-Clause</td></tr><tr><td><a href="https://werkzeug.palletsprojects.com">Werkzeug</a></td><td>3.1.9</td><td>BSD-3-Clause</td></tr><tr><td><a href="https://jinja.palletsprojects.com">Jinja2</a></td><td>3.1.6</td><td>BSD-3-Clause</td></tr><tr><td><a href="https://cryptography.io">cryptography</a></td><td>50.0.2</td><td>Apache-2.0 ou BSD-3-Clause</td></tr><tr><td><a href="https://pyinstaller.org">PyInstaller</a></td><td>6.16.0</td><td>GPL-2.0 avec exception pour les programmes distribués</td></tr></tbody></table></div>
+
+<!-- ============================================================ -->
+<h2 id="glossaire">16. Glossaire</h2>
+<dl class="glossaire">
+  <dt>CELI — compte d'épargne libre d'impôt</dt><dd>Les rendements et les retraits ne sont pas imposés. Les retraits n'influencent ni la PSV ni les crédits d'impôt.</dd>
+  <dt>REER — régime enregistré d'épargne-retraite</dt><dd>Les cotisations sont déductibles ; les retraits sont imposables.</dd>
+  <dt>FERR — fonds enregistré de revenu de retraite</dt><dd>Ce que devient le REER (au plus tard à 71 ans). Un retrait minimum, fixé par la loi selon l'âge, est obligatoire chaque année.</dd>
+  <dt>CRI / FRV</dt><dd>Compte de retraite immobilisé et fonds de revenu viager : épargne de retraite « immobilisée » provenant d'un régime d'employeur, avec un retrait maximum.</dd>
+  <dt>RRQ — Régime de rentes du Québec</dt><dd>Rente publique liée à vos années de travail. Elle peut commencer entre 60 et 72 ans.</dd>
+  <dt>PSV — pension de la Sécurité de la vieillesse</dt><dd>Pension fédérale liée aux années de résidence au Canada, de 65 à 70 ans, majorée de 10 % à 75 ans.</dd>
+  <dt>Récupération de la PSV</dt><dd>Remboursement de tout ou partie de la PSV quand le revenu net dépasse un seuil (environ 95 000 $ en 2026).</dd>
+  <dt>SRG — Supplément de revenu garanti</dt><dd>Prestation fédérale pour les retraités à faible revenu (non calculée par l'application).</dd>
+  <dt>Fractionnement du revenu de pension</dt><dd>Transfert fiscal, entre conjoints, d'une partie (jusqu'à 50 %) des revenus de pension admissibles, pour réduire l'impôt du couple.</dd>
+  <dt>Rente temporaire (prestation de raccordement)</dt><dd>Supplément versé par certains régimes d'employeur entre la retraite et 65 ans environ.</dd>
+  <dt>FSS — Fonds des services de santé</dt><dd>Cotisation québécoise payée par les particuliers sur certains revenus autres que d'emploi.</dd>
+  <dt>Impôt latent</dt><dd>Impôt qui sera dû un jour sur une somme encore à l'abri (par exemple le solde d'un FERR).</dd>
+  <dt>Dollars de 2026 / dollars courants</dt><dd>Les dollars de 2026 retirent l'effet de l'inflation pour comparer des années différentes ; les dollars courants sont les montants réellement versés l'année indiquée.</dd>
+</dl>
+
+<footer>
+  <p>Plan de décaissement — version 2026-02 · guide mis à jour le 20/11/2026.</p>
+  <p>Estimation seulement : à discuter avec votre planificateur financier avant toute décision.</p>
+</footer>
+</main>
+</div>
+</body>
+</html>

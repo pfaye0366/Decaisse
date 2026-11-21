@@ -5,6 +5,7 @@ personnes seules, Québec / Canada / France).
 
 - **Télécharger l'application** : onglet [Releases](https://github.com/pfaye0366/plan-decaissement/releases/latest).
   Elle ne s'active qu'avec le courriel et le code d'activation reçus par invitation.
+- **Guide de l'abonné** (installation, utilisation, sources) : https://pfaye0366.github.io/plan-decaissement/guide/
 - `publication.json` : paramètres officiels (barèmes, cotisations, RRQ, PSV…) lus par l'application au
   démarrage. Ce fichier est signé ; il ne contient aucun courriel ni aucune donnée personnelle.
 
