@@ -1,8 +1,8 @@
 {
  "contenu": {
   "format": 1,
-  "publie_le": "2026-11-21T13:34:45",
-  "version_app": "2026-03",
+  "publie_le": "2026-11-21T14:53:25",
+  "version_app": "2026-04",
   "lien_telechargement": "https://github.com/pfaye0366/plan-decaissement/releases/latest",
   "parametres": {
    "2026": {
@@ -135,5 +135,5 @@
    "ef8cc23ec5e96d777c36f7b5e6fe26e3bb321a5e816bcbff68179b15083de468"
   ]
  },
- "signature": "vjKdETkObuzMqVEAh9GxNfnYUeIX4GlYVQdWkpwih40QhF9+nxMYziJkGMyM3Ii3YqV/PYC9TD2QsO9QhiDYDA=="
+ "signature": "DoYcpFyFkOxjeYjUxwQiOUXJ07SZdyJ0C7s21u6R4fJbK6aPwjjp923G4get0UJ9OxxqKmqwxe3HRUrEe2jKCg=="
 }

@@ -106,7 +106,7 @@
 <main>
 <header class="titre">
   <h1>Plan de décaissement — guide de l'abonné</h1>
-  <p>Pour la version 2026-03 de l'application · guide mis à jour le 21/11/2026</p>
+  <p>Pour la version 2026-04 de l'application · guide mis à jour le 21/11/2026</p>
 </header>
 
 <!-- ============================================================ -->
@@ -468,13 +468,22 @@ L'onglet indique la date de réception des paramètres.</p>
 (un fichier modifié par quelqu'un d'autre serait refusé). Vous n'avez rien à faire. Sans connexion, elle utilise les derniers paramètres reçus
 et l'indique dans un bandeau.</p>
 <h3>Une nouvelle version de l'application</h3>
-<p>Quand une nouvelle version est disponible, un bandeau l'annonce en haut de l'écran :</p>
+<p>Quand une nouvelle version est disponible, un bandeau orange l'annonce en haut de l'écran, et un rappel
+« Mise à jour » apparaît à côté du numéro de version :</p>
 <figure><img src="images/bandeau-nouvelle-version.png" alt="Bandeau annonçant une nouvelle version"></figure>
+<figure class="moyenne"><img src="images/rappel-nouvelle-version.png" alt="Rappel de mise à jour dans l'en-tête"></figure>
 <ol class="etapes">
-  <li>Cliquez sur <strong>télécharger</strong> et récupérez le nouveau fichier .zip.</li>
-  <li>Fermez l'application (onglet du navigateur et fenêtre noire).</li>
+  <li>Cliquez sur <strong>Télécharger et installer</strong>, puis confirmez. La page de téléchargement s'ouvre dans un
+    nouvel onglet et l'application <strong>se ferme d'elle-même</strong> (la fenêtre noire disparaît). L'onglet affiche
+    alors les étapes à suivre :
+    <figure><img src="images/instructions-mise-a-jour.png" alt="Étapes d'installation affichées après la fermeture"></figure></li>
+  <li>Téléchargez le fichier <strong>PlanDec-…zip</strong> (rubrique « Assets » de la page).</li>
   <li>Supprimez l'ancien dossier <strong>PlanDec</strong>, puis extrayez le nouveau au même endroit (voir <a href="#installation">Installation</a>).</li>
+  <li>Lancez <strong>Plan de decaissement.exe</strong> dans le nouveau dossier. Si Windows le bloque, suivez la
+    procédure <a href="#smart-app-control">Smart App Control</a>.</li>
 </ol>
+<p>Si l'ancienne version est encore ouverte quand vous lancez la nouvelle, celle-ci la ferme automatiquement : vous
+  n'aurez jamais deux fenêtres noires.</p>
 <p>Vos simulations ne sont pas touchées : elles sont dans votre dossier Documents local (bouton <strong>Mes fichiers</strong>), pas dans le dossier du programme.
 Vous n'aurez pas à refaire l'activation.</p>
 
@@ -590,7 +599,7 @@ pas de statistiques d'utilisation, pas de publicité.</p>
 </dl>
 
 <footer>
-  <p>Plan de décaissement — version 2026-03 · guide mis à jour le 21/11/2026.</p>
+  <p>Plan de décaissement — version 2026-04 · guide mis à jour le 21/11/2026.</p>
   <p>Estimation seulement : à discuter avec votre planificateur financier avant toute décision.</p>
 </footer>
 </main>
