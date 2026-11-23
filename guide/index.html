@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Guide de l'abonné</title>
+<title>Décaisse – guide de l'abonné</title>
 <style>
   :root {
     --fond: #f6f7f9; --surface: #ffffff; --texte: #1f2430; --doux: #5b6576; --bordure: #dde1e7;
@@ -32,6 +32,7 @@
   header.titre { border-bottom: 1px solid var(--bordure); padding-bottom: 1.2rem; margin-bottom: 1.5rem; }
   header.titre h1 { margin: 0 0 .3rem; font-size: 2rem; line-height: 1.2; }
   header.titre p { margin: .2rem 0; color: var(--doux); }
+  header.titre img.logo { display: block; width: min(380px, 100%); height: auto; margin: 0 0 .8rem; }
   h2 { font-size: 1.5rem; margin: 2.8rem 0 .8rem; padding-top: .4rem; border-top: 1px solid var(--bordure); }
   h3 { font-size: 1.15rem; margin: 1.8rem 0 .5rem; }
   p, li { max-width: 78ch; }
@@ -105,14 +106,15 @@
 
 <main>
 <header class="titre">
-  <h1>Plan de décaissement — guide de l'abonné</h1>
-  <p>Pour la version 2026-04 de l'application · guide mis à jour le 21/11/2026</p>
+  <img class="logo" src="images/decaisse-logo.png" alt="Décaisse — Planifier ses retraits, sereinement">
+  <h1>Guide de l'abonné</h1>
+  <p>Pour la version 2026-05 de l'application · guide mis à jour le 22/11/2026</p>
 </header>
 
 <!-- ============================================================ -->
 <h2 id="presentation">1. Présentation</h2>
 
-<p>Le <strong>Plan de décaissement</strong> projette, année par année, les revenus de votre retraite :
+<p><strong>Décaisse</strong> projette, année par année, les revenus de votre retraite :
 rentes d'employeur, Régime de rentes du Québec (RRQ), Sécurité de la vieillesse (PSV), retraits de vos REER/FERR et CELI,
 et les <strong>impôts fédéral et du Québec</strong> qui en découlent.</p>
 
@@ -140,15 +142,15 @@ plusieurs choix : date de départ, âge de début de la RRQ ou de la PSV.</p>
 
 <ol class="etapes">
   <li><strong>Téléchargez</strong> l'application à l'adresse indiquée dans votre invitation
-    (<a href="https://github.com/pfaye0366/plan-decaissement/releases/latest">https://github.com/pfaye0366/plan-decaissement/releases/latest</a>).
-    Sur cette page, sous « Assets », cliquez sur le fichier <code>PlanDec-….zip</code>.</li>
+    (<a href="https://github.com/pfaye0366/Decaisse/releases/latest">https://github.com/pfaye0366/Decaisse/releases/latest</a>).
+    Sur cette page, sous « Assets », cliquez sur le fichier <code>Decaisse-….zip</code>.</li>
   <li><strong>Extrayez</strong> le fichier : dans le dossier Téléchargements, faites un clic droit sur le fichier .zip,
     puis <em>Extraire tout…</em>. Choisissez par exemple votre dossier Documents, puis <em>Extraire</em>.
     <figure class="moyenne"><img src="images/windows-extraire.png" alt="Menu Extraire tout de Windows"><figcaption>Clic droit sur le fichier .zip, puis « Extraire tout… ».</figcaption></figure>
     <div class="encadre note"><p>Ne lancez pas le programme depuis l'intérieur du fichier .zip sans l'avoir extrait : il ne fonctionnerait pas.</p></div>
   </li>
-  <li>Ouvrez le dossier <strong>PlanDec</strong> obtenu et double-cliquez sur
-    <strong>Plan de decaissement.exe</strong>. Astuce : faites un clic droit sur ce fichier puis <em>Envoyer vers &gt; Bureau (créer un raccourci)</em>
+  <li>Ouvrez le dossier <strong>Decaisse</strong> obtenu et double-cliquez sur
+    <strong>Decaisse.exe</strong>. Astuce : faites un clic droit sur ce fichier puis <em>Envoyer vers &gt; Bureau (créer un raccourci)</em>
     pour le retrouver facilement.</li>
   <li>Au premier lancement, Windows peut afficher <strong>« Windows a protégé votre ordinateur »</strong>.
     Cliquez sur <em>Informations complémentaires</em>, puis sur <em>Exécuter quand même</em>.
@@ -161,7 +163,7 @@ plusieurs choix : date de départ, âge de début de la RRQ ou de la PSV.</p>
       <ol>
         <li>Ouvrez <em>Sécurité Windows</em> (menu Démarrer), puis <em>Contrôle des applications et du navigateur</em> &gt;
           <em>Paramètres de Smart App Control</em>, et choisissez <strong>Désactivé</strong>.</li>
-        <li>Double-cliquez sur <strong>Plan de decaissement.exe</strong>, puis <em>Exécuter quand même</em> ; attendez que l'application s'ouvre dans le navigateur.</li>
+        <li>Double-cliquez sur <strong>Decaisse.exe</strong>, puis <em>Exécuter quand même</em> ; attendez que l'application s'ouvre dans le navigateur.</li>
         <li>Revenez dans <em>Paramètres de Smart App Control</em> et <strong>réactivez-le</strong> (<em>Activé</em>).</li>
       </ol>
       <p>Le programme démarre ensuite normalement, même avec la protection réactivée. Ne laissez pas Smart App Control désactivé.
@@ -438,7 +440,7 @@ Sous le tableau, une carte par variante détaille les sources de revenu (pour un
 <figure><img src="images/barre-enregistree.png" alt="Barre du haut après l'enregistrement"></figure>
 
 <h3>Où sont vos données ?</h3>
-<p>Uniquement sur votre ordinateur, dans le dossier <code>C:\Users\<em>votre nom</em>\Documents\Plan de décaissement</code>.
+<p>Uniquement sur votre ordinateur, dans le dossier <code>C:\Users\<em>votre nom</em>\Documents\Décaisse</code>.
 Le bouton <strong>Mes fichiers</strong>, en haut de l'écran, l'ouvre directement dans l'Explorateur. Il contient :</p>
 <ul>
   <li><code>scenarios\</code> : vos simulations (un fichier <code>.json</code> par simulation) ;</li>
@@ -450,7 +452,7 @@ Le bouton <strong>Mes fichiers</strong>, en haut de l'écran, l'ouvre directemen
 volontairement vos simulations dans le dossier Documents <em>local</em> de votre ordinateur, qui n'est <strong>pas</strong>
 synchronisé : vos données financières ne quittent jamais votre ordinateur. C'est pourquoi vous ne les verrez peut-être pas
 en cliquant sur « Documents » : utilisez le bouton <strong>Mes fichiers</strong>.</p></div>
-<div class="encadre note"><p><strong>Sauvegarde</strong> : copiez de temps en temps le dossier <code>Documents\Plan de décaissement\scenarios</code> sur une clé USB
+<div class="encadre note"><p><strong>Sauvegarde</strong> : copiez de temps en temps le dossier <code>Documents\Décaisse\scenarios</code> sur une clé USB
 ou dans votre sauvegarde habituelle. Pour transférer vos simulations sur un autre ordinateur, copiez ce dossier au même endroit.</p></div>
 
 <!-- ============================================================ -->
@@ -477,9 +479,9 @@ et l'indique dans un bandeau.</p>
     nouvel onglet et l'application <strong>se ferme d'elle-même</strong> (la fenêtre noire disparaît). L'onglet affiche
     alors les étapes à suivre :
     <figure><img src="images/instructions-mise-a-jour.png" alt="Étapes d'installation affichées après la fermeture"></figure></li>
-  <li>Téléchargez le fichier <strong>PlanDec-…zip</strong> (rubrique « Assets » de la page).</li>
-  <li>Supprimez l'ancien dossier <strong>PlanDec</strong>, puis extrayez le nouveau au même endroit (voir <a href="#installation">Installation</a>).</li>
-  <li>Lancez <strong>Plan de decaissement.exe</strong> dans le nouveau dossier. Si Windows le bloque, suivez la
+  <li>Téléchargez le fichier <strong>Decaisse-…zip</strong> (rubrique « Assets » de la page).</li>
+  <li>Supprimez l'ancien dossier <strong>Decaisse</strong>, puis extrayez le nouveau au même endroit (voir <a href="#installation">Installation</a>).</li>
+  <li>Lancez <strong>Decaisse.exe</strong> dans le nouveau dossier. Si Windows le bloque, suivez la
     procédure <a href="#smart-app-control">Smart App Control</a>.</li>
 </ol>
 <p>Si l'ancienne version est encore ouverte quand vous lancez la nouvelle, celle-ci la ferme automatiquement : vous
@@ -508,7 +510,7 @@ d'assurance maladie apparaissent à part dans la fiche annuelle et dans le table
   <li><strong>Vos données restent sur votre ordinateur.</strong> L'application fonctionne entièrement en local ; l'adresse
     <code>127.0.0.1</code> n'est accessible que depuis votre ordinateur.</li>
   <li>La <strong>seule</strong> communication par Internet est le <strong>téléchargement</strong> du fichier des paramètres officiels
-    (<code>https://pfaye0366.github.io/plan-decaissement/publication.json</code>), à chaque démarrage. Comme pour toute page Web, le serveur qui l'héberge (GitHub) voit l'adresse IP de la connexion.</li>
+    (<code>https://pfaye0366.github.io/Decaisse/publication.json</code>), à chaque démarrage. Comme pour toute page Web, le serveur qui l'héberge (GitHub) voit l'adresse IP de la connexion.</li>
   <li>Rien n'est envoyé : ni vos simulations, ni votre courriel, ni votre code. L'activation se vérifie sur votre ordinateur, à partir d'une empreinte chiffrée.</li>
   <li>Le fichier téléchargé est <strong>signé numériquement</strong> : l'application refuse tout fichier qui ne vient pas de l'administrateur.</li>
 </ul>
@@ -520,13 +522,13 @@ d'assurance maladie apparaissent à part dans la fiche annuelle et dans le table
   <tbody>
     <tr><td>« Windows a protégé votre ordinateur »</td><td><em>Informations complémentaires</em>, puis <em>Exécuter quand même</em> (voir <a href="#installation">Installation</a>).</td></tr>
     <tr><td>« Smart App Control a bloqué… », sans bouton pour continuer</td><td>Suspendez Smart App Control le temps du premier lancement, puis réactivez-le (voir <a href="#smart-app-control">la marche à suivre</a>).</td></tr>
-    <tr><td>Votre antivirus bloque ou met en quarantaine le programme</td><td>Autorisez <code>Plan de decaissement.exe</code> dans votre antivirus, ou demandez de l'aide à la personne qui vous a invité.</td></tr>
+    <tr><td>Votre antivirus bloque ou met en quarantaine le programme</td><td>Autorisez <code>Decaisse.exe</code> dans votre antivirus, ou demandez de l'aide à la personne qui vous a invité.</td></tr>
     <tr><td>Le navigateur ne s'ouvre pas</td><td>Ouvrez-le vous-même à l'adresse <code>http://127.0.0.1:8770</code>, tant que la fenêtre noire est ouverte.</td></tr>
-    <tr><td>« Ce site est inaccessible » dans le navigateur</td><td>La fenêtre noire a été fermée : relancez <code>Plan de decaissement.exe</code>.</td></tr>
+    <tr><td>« Ce site est inaccessible » dans le navigateur</td><td>La fenêtre noire a été fermée : relancez <code>Decaisse.exe</code>.</td></tr>
     <tr><td>La fenêtre noire se ferme aussitôt ou affiche une erreur</td><td>Le programme est peut-être déjà ouvert : fermez toutes ses fenêtres noires et relancez-le. Sinon, notez le message et transmettez-le.</td></tr>
     <tr><td>« Courriel ou code d'activation non reconnu »</td><td>Vérifiez le courriel et le code de votre invitation (le code a la forme <code>ABCD-2345</code>).</td></tr>
     <tr><td>« Impossible de joindre le serveur de publication »</td><td>Vérifiez votre connexion Internet, puis réessayez. La connexion n'est nécessaire qu'à l'activation.</td></tr>
-    <tr><td>« Chemin d'accès trop long » pendant l'extraction</td><td>Extrayez dans un dossier au nom court, par exemple <code>C:\PlanDec</code> ou directement dans <code>Documents</code> (Windows limite la longueur des chemins).</td></tr>
+    <tr><td>« Chemin d'accès trop long » pendant l'extraction</td><td>Extrayez dans un dossier au nom court, par exemple <code>C:\Decaisse</code> ou directement dans <code>Documents</code> (Windows limite la longueur des chemins).</td></tr>
     <tr><td>Bandeau « Hors connexion »</td><td>Rien à faire : l'application utilise les derniers paramètres reçus.</td></tr>
     <tr><td>Bandeau « accès aux mises à jour retiré »</td><td>L'application et vos simulations restent utilisables, sans nouvelles mises à jour.</td></tr>
     <tr><td>Le calcul est long</td><td>Le premier calcul prend 30 à 60 secondes ; une comparaison, de 5 à 20 secondes par variante.</td></tr>
@@ -570,8 +572,8 @@ d'assurance maladie apparaissent à part dans la fiche annuelle et dans le table
 
 <h3>Services en ligne utilisés</h3>
 <ul>
-  <li><strong>GitHub Pages</strong> : hébergement du fichier signé des paramètres officiels (<code>https://pfaye0366.github.io/plan-decaissement/publication.json</code>), lu au démarrage.</li>
-  <li><strong>GitHub Releases</strong> : téléchargement de l'application (<a href="https://github.com/pfaye0366/plan-decaissement/releases/latest">https://github.com/pfaye0366/plan-decaissement/releases/latest</a>).</li>
+  <li><strong>GitHub Pages</strong> : hébergement du fichier signé des paramètres officiels (<code>https://pfaye0366.github.io/Decaisse/publication.json</code>), lu au démarrage.</li>
+  <li><strong>GitHub Releases</strong> : téléchargement de l'application (<a href="https://github.com/pfaye0366/Decaisse/releases/latest">https://github.com/pfaye0366/Decaisse/releases/latest</a>).</li>
 </ul>
 <p>L'application n'utilise <strong>aucune autre API ni aucun autre service</strong> : pas de taux de change en ligne (vous le saisissez),
 pas de statistiques d'utilisation, pas de publicité.</p>
@@ -599,7 +601,7 @@ pas de statistiques d'utilisation, pas de publicité.</p>
 </dl>
 
 <footer>
-  <p>Plan de décaissement — version 2026-04 · guide mis à jour le 21/11/2026.</p>
+  <p>Décaisse — version 2026-05 · guide mis à jour le 22/11/2026.</p>
   <p>Estimation seulement : à discuter avec votre planificateur financier avant toute décision.</p>
 </footer>
 </main>

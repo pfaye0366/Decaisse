@@ -1,11 +1,14 @@
-# Plan de décaissement
+<img src="guide/images/decaisse-logo.png" alt="Décaisse — Planifier ses retraits, sereinement" width="380">
 
-Distribution de l'application « Plan de décaissement » (estimation de retraite pour couples ou
-personnes seules, Québec / Canada / France).
+# Décaisse
 
-- **Télécharger l'application** : onglet [Releases](https://github.com/pfaye0366/plan-decaissement/releases/latest).
+**Planifier ses retraits, sereinement.** Décaisse estime, année par année, les revenus de votre retraite
+(rentes, RRQ, PSV, retraits REER/FERR et CELI) et les impôts qui en découlent, et cherche le meilleur rythme
+de retrait pour une personne seule ou un couple résidant au Québec (revenus de France facultatifs).
+
+- **Télécharger l'application** : onglet [Releases](https://github.com/pfaye0366/Decaisse/releases/latest).
   Elle ne s'active qu'avec le courriel et le code d'activation reçus par invitation.
-- **Guide de l'abonné** (installation, utilisation, sources) : https://pfaye0366.github.io/plan-decaissement/guide/
+- **Guide de l'abonné** (installation, utilisation, sources) : https://pfaye0366.github.io/Decaisse/guide/
 - `publication.json` : paramètres officiels (barèmes, cotisations, RRQ, PSV…) lus par l'application au
   démarrage. Ce fichier est signé ; il ne contient aucun courriel ni aucune donnée personnelle.
 
