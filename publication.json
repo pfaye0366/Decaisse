@@ -1,8 +1,8 @@
 {
  "contenu": {
   "format": 1,
-  "publie_le": "2026-11-26T17:28:46",
-  "version_app": "2026-05",
+  "publie_le": "2026-11-26T17:37:38",
+  "version_app": "2026-06",
   "lien_telechargement": "https://github.com/pfaye0366/Decaisse/releases/latest",
   "parametres": {
    "2026": {
@@ -136,5 +136,5 @@
    "ef8cc23ec5e96d777c36f7b5e6fe26e3bb321a5e816bcbff68179b15083de468"
   ]
  },
- "signature": "SdIwAAOGctRDxv5MV4P0n+H4AwUkVNTarZ/g8bVE5SgeSBL+FwrHKvQ+jp1FtVNL5HRKV0fNN/WIk5QwkQ0yAQ=="
+ "signature": "nueHoJZky52WwccrECrYAg9oOh5ZC/U35w8GRkZH9GPj3nLoBV8VeU0ecGea1JR3QAErZ3pZB4pB5Pxra3rZDw=="
 }
